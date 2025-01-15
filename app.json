@@ -24,6 +24,13 @@
           "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location.",
           "locationWhenInUsePermission": "Show current location on map."
         }
+      ],
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsDownloadToken": "EXPO_SECRET_MAPBOX_TOKEN",
+          "RNMapboxMapsVersion": "11.0.0"
+        }
       ]
     ],
     "experiments": {
