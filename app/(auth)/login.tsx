@@ -70,7 +70,7 @@ export default function Auth() {
       <TextInput
         onChangeText={(text) => setPassword(text)}
         value={password}
-        secureTextEntry
+        secureTextEntry={true}
         placeholder="Password"
         autoCapitalize="none"
         className="rounded-md border border-gray-200 p-3"

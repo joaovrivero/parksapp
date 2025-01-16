@@ -31,7 +31,8 @@
           "RNMapboxMapsDownloadToken": "EXPO_SECRET_MAPBOX_TOKEN",
           "RNMapboxMapsVersion": "11.0.0"
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true,
