@@ -7,7 +7,7 @@
     "newArchEnabled": true,
     "web": {
       "bundler": "metro",
-      "output": "static",
+      "output": "server",
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
@@ -28,7 +28,7 @@
       [
         "@rnmapbox/maps",
         {
-          "RNMapboxMapsDownloadToken": "EXPO_SECRET_MAPBOX_TOKEN",
+          "RNMapboxMapsDownloadToken": "MAPBOX_DOWNLOADS_TOKEN",
           "RNMapboxMapsVersion": "11.0.0"
         }
       ],
@@ -57,7 +57,20 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.parksapp"
+      "package": "com.anonymous.parksapp",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "74638a57-36ec-4d5c-a76a-752b3495267a"
+      }
     }
   }
 }

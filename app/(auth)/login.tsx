@@ -1,4 +1,4 @@
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
   Alert,
@@ -6,7 +6,6 @@ import {
   View,
   AppState,
   TextInput,
-  Button,
   Pressable,
   Text,
 } from 'react-native';
@@ -29,6 +28,7 @@ export default function Auth() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   async function signInWithEmail() {
     setLoading(true);
@@ -38,21 +38,6 @@ export default function Auth() {
     });
 
     if (error) Alert.alert(error.message);
-    setLoading(false);
-  }
-
-  async function signUpWithEmail() {
-    setLoading(true);
-    const {
-      data: { session },
-      error,
-    } = await supabase.auth.signUp({
-      email,
-      password,
-    });
-
-    if (error) Alert.alert(error.message);
-    if (!session) Alert.alert('Please check your inbox for email verification!');
     setLoading(false);
   }
 
@@ -84,7 +69,7 @@ export default function Auth() {
         </Pressable>
 
         <Pressable
-          onPress={() => signUpWithEmail()}
+          onPress={() => router.push('/(auth)/signup')}
           disabled={loading}
           className="flex-1 items-center rounded-md bg-red-500 p-3 px-8">
           <Text className="text-lg font-bold text-white">Sign up</Text>
