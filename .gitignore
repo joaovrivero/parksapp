@@ -1,5 +1,6 @@
 node_modules/
 .expo/
+.vscode/
 dist/
 npm-debug.*
 *.jks
@@ -13,7 +14,7 @@ web-build/
 expo-env.d.ts
 
 # firebase/supabase/vexo
-# .env
+.env
 
 ios
 android
